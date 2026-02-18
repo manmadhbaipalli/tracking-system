@@ -1,0 +1,5 @@
+
+
+STDERR:
+error: unknown option '--prompt'
+(Did you mean one of --from-pr, --print?)

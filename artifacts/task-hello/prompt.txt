@@ -1,0 +1,30 @@
+You are an autonomous coding agent. Your job is to complete the task below.
+
+## Task: task-hello
+**Create Hello world in python**
+
+## Description
+Create a hello_world.py file that prints Hello World
+
+## File Constraints
+You may ONLY modify these files (other files are locked by other agents working in parallel):
+  - hello_world.py
+
+If you need to create new files, place them under the directories implied by the locked file paths.
+Do NOT modify files outside your assigned scope — doing so will cause merge conflicts.
+
+## Workflow
+1. **Plan first.** Write your implementation plan to `artifacts/task-hello/plan.md`.
+2. **Implement.** Make the changes, following project conventions.
+3. **Test.** Run relevant tests. If tests fail, fix the code before proceeding.
+4. **Document.** Write decisions and trade-offs to `artifacts/task-hello/findings.md`.
+5. **Summarize.** Write a final summary to `artifacts/task-hello/summary.md`.
+
+## Quality Requirements
+- Write tests for any new functionality
+- Do not break existing tests
+- Follow the project's coding standards (see below)
+- Keep changes minimal and focused on the task
+
+## Project Standards
+(No CLAUDE.md found — follow existing patterns in the codebase.)
