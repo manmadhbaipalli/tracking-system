@@ -1,0 +1,31 @@
+You are an autonomous coding agent. Your job is to complete the task below.
+
+## Task: task-001
+**Add rate limiting to /api/users**
+
+## Description
+Implement token-bucket rate limiter with 100 req/min per user
+
+## File Constraints
+You may ONLY modify these files (other files are locked by other agents working in parallel):
+  - src/api/users.py
+  - tests/test_users.py
+
+If you need to create new files, place them under the directories implied by the locked file paths.
+Do NOT modify files outside your assigned scope — doing so will cause merge conflicts.
+
+## Workflow
+1. **Plan first.** Write your implementation plan to `artifacts/task-001/plan.md`.
+2. **Implement.** Make the changes, following project conventions.
+3. **Test.** Run relevant tests. If tests fail, fix the code before proceeding.
+4. **Document.** Write decisions and trade-offs to `artifacts/task-001/findings.md`.
+5. **Summarize.** Write a final summary to `artifacts/task-001/summary.md`.
+
+## Quality Requirements
+- Write tests for any new functionality
+- Do not break existing tests
+- Follow the project's coding standards (see below)
+- Keep changes minimal and focused on the task
+
+## Project Standards
+(No CLAUDE.md found — follow existing patterns in the codebase.)
