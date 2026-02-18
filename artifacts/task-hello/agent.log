@@ -1,0 +1,9 @@
+Task complete. Here's what was done:
+
+- **`hello_world.py`** — created with `print("Hello World")`, verified to produce `Hello World` when run.
+- **`artifacts/task-hello/plan.md`** — implementation plan.
+- **`artifacts/task-hello/findings.md`** — decisions and trade-offs.
+- **`artifacts/task-hello/summary.md`** — final summary.
+
+
+STDERR:
