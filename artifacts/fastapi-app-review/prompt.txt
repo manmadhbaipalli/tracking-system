@@ -1,0 +1,110 @@
+You are an autonomous coding agent. Your job is to complete the task below.
+
+## Task: fastapi-app-review
+**[REVIEW] Build FastAPI application with auth, logging, error handling, and circuit breaker**
+
+**Pipeline:** `fastapi-app` | **Phase:** `review`
+
+## Description
+Build a production-ready FastAPI application with the following requirements:
+
+### Functional Requirements
+1. **Authentication Endpoints**
+   - POST /auth/register: User registration with email, password (hashed with bcrypt)
+   - POST /auth/login: User login returning JWT access + refresh tokens
+   - POST /auth/refresh: Refresh expired access tokens
+   - POST /auth/logout: Invalidate tokens
+
+2. **Centralized Logging System**
+   - Structured JSON logging (timestamp, level, request_id, endpoint, user_id)
+   - Request/response logging middleware
+   - Correlation ID propagation across all logs
+   - Log levels: DEBUG, INFO, WARNING, ERROR
+
+3. **Centralized Exception Handling**
+   - Global exception handler middleware
+   - Custom exception classes (AuthError, ValidationError, NotFoundError, ServiceUnavailableError)
+   - Consistent error response format with error code, message, details
+   - Stack traces logged but never exposed to clients
+
+4. **Circuit Breaker Pattern**
+   - Implement circuit breaker for external service calls
+   - States: CLOSED (normal) then OPEN (failing) then HALF_OPEN (testing recovery)
+   - Configurable failure threshold, timeout, and recovery window
+   - Fallback responses when circuit is open
+
+5. **Swagger/OpenAPI**
+   - Auto-generated Swagger UI at /docs
+   - ReDoc at /redoc
+   - Proper request/response schemas for all endpoints
+   - Authentication scheme documented in OpenAPI spec
+
+### Technical Stack
+- Python 3.12, FastAPI, SQLAlchemy, Pydantic v2
+- SQLite for development, PostgreSQL-ready
+- JWT via python-jose, passwords via passlib[bcrypt]
+- pytest for testing
+
+## Phase: review
+Review all code changes for quality, security, and correctness. Read all prior artifacts. Write review findings to artifacts/{task_id}/review.md.
+
+**Note:** This task depended on: fastapi-app-test. Those are now merged into main.
+
+## File Constraints
+You may ONLY modify these files (other files are locked by other agents working in parallel):
+  - app/__init__.py
+  - app/main.py
+  - app/config.py
+  - app/models.py
+  - app/schemas.py
+  - app/auth/__init__.py
+  - app/auth/router.py
+  - app/auth/service.py
+  - app/auth/jwt.py
+  - app/middleware/__init__.py
+  - app/middleware/logging.py
+  - app/middleware/error_handler.py
+  - app/middleware/correlation.py
+  - app/circuit_breaker.py
+  - app/exceptions.py
+  - app/logging_config.py
+  - tests/__init__.py
+  - tests/conftest.py
+  - tests/test_auth.py
+  - tests/test_circuit_breaker.py
+  - tests/test_middleware.py
+  - requirements.txt
+  - README.md
+
+If you need to create new files, place them under the directories implied by the locked file paths.
+Do NOT modify files outside your assigned scope — doing so will cause merge conflicts.
+
+## Your Role: REVIEW AGENT
+You are the final agent in an SDLC pipeline. All previous phases are complete.
+
+## Prior Artifacts
+Read ALL artifacts under `artifacts/` to understand the full history:
+- Analysis, design, implementation notes, and test results
+
+## Workflow
+1. Review all code changes for:
+   - Correctness — does it match the design?
+   - Security — OWASP top 10, input validation, auth checks
+   - Performance — N+1 queries, unnecessary allocations, missing indexes
+   - Maintainability — naming, structure, documentation
+2. Run the full test suite.
+3. Write your review to `artifacts/fastapi-app-review/review.md`:
+   - **Approved / Changes Needed**
+   - Specific issues found with file:line references
+   - Suggestions for improvement
+
+If you find issues, fix them directly. This is the last gate before merge.
+
+## Quality Requirements
+- Write tests for any new functionality
+- Do not break existing tests
+- Follow the project's coding standards (see below)
+- Keep changes minimal and focused on the task
+
+## Project Standards
+(No CLAUDE.md found — follow existing patterns in the codebase.)
