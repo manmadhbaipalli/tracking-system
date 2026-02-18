@@ -1,0 +1,22 @@
+The design document has been written to `artifacts/fastapi-app-design/design.md`. Here's a summary of what it covers:
+
+## Design Summary
+
+**Approach:** Greenfield implementation of all 22 files, resolving all open questions from the analysis phase with pragmatic defaults (sync SQLAlchemy, in-process circuit breaker, stdlib JSON logging, DB-stored refresh tokens).
+
+**Key architectural decisions:**
+
+1. **Middleware order** — `CorrelationMiddleware` (outermost) → `LoggingMiddleware` → `ErrorHandlerMiddleware` (innermost), registered in reverse in `main.py` due to Starlette's behavior.
+
+2. **Exception hierarchy** — `AppException` base class carries `status_code` + `error_code`; subclasses for `AuthError`, `ConflictError`, `ValidationError`, `NotFoundError`, `ServiceUnavailableError`. `ConflictError` (409) is added beyond the spec to properly handle duplicate registration.
+
+3. **JWT security** — `algorithm=["HS256"]` pinned explicitly; `SecretStr` prevents accidental logging; access + refresh tokens share `jti` for DB-linked revocation.
+
+4. **Circuit breaker** — `threading.Lock`-protected state machine with `call(func, *args, fallback=None)` pattern + decorator convenience; time-based tests mock `time.monotonic()` instead of sleeping.
+
+5. **PostgreSQL readiness** — `connect_args` conditioned on URL scheme; migrations path noted.
+
+**Implementation order** (22 steps) starts with `config.py` and builds up the dependency graph before wiring everything in `main.py`, then tests last.
+
+
+STDERR:
