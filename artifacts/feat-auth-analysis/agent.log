@@ -1,0 +1,29 @@
+The analysis is complete. Here's a summary of findings written to `artifacts/feat-auth-analysis/analysis.md`:
+
+## Key Findings
+
+**Codebase state:** Greenfield — no source files exist yet. The sibling `task-001` agent also produced no code, so no framework or patterns have been established.
+
+**Affected files (in scope):**
+- `src/auth.py` — JWT creation/validation, login/logout/refresh route handlers
+- `src/middleware.py` — `require_auth` decorator/dependency for protecting routes
+- `tests/test_auth.py` — Full test suite covering all auth paths
+
+**Critical external dependencies (out of scope but required):**
+- `src/models.py` — User model with password hash field
+- `src/config.py` — `SECRET_KEY`, algorithm, token TTL
+- `src/app.py` — Application factory that registers auth routes
+- `tests/conftest.py` — Shared test fixtures
+- `requirements.txt` — Must include `PyJWT`, `passlib[bcrypt]`, the web framework
+
+**Top risks:**
+- Framework is unestablished (Flask vs FastAPI) — must be decided before implementation
+- Refresh token revocation on logout requires server-side storage (DB/Redis)
+- Token type confusion attacks (access token reused as refresh token)
+- Brute-force on `/auth/login` (needs rate limiting, consistent with `task-001`)
+- `tests/conftest.py` ownership is unclear — if locked to another agent, `test_auth.py` needs self-contained fixtures
+
+**Open questions flagged:** Framework choice, User model structure, DB/ORM, refresh token storage strategy, token transport (body vs HttpOnly cookie), `conftest.py` ownership.
+
+
+STDERR:
