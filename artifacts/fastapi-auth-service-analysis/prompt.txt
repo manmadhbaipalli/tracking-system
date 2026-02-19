@@ -1,7 +1,11 @@
 You are an autonomous coding agent. Your job is to complete the task below.
 
+## Environment
+- **Working directory:** `C:\Manmadh\genai\claude-code-agents\workspace\fastapi-auth-service-agent-1`
+- All file paths must be **absolute** (starting with `C:\Manmadh\genai\claude-code-agents\workspace\fastapi-auth-service-agent-1/`)
+
 ## Task: fastapi-auth-service-analysis
-**[ANALYSIS] Build fastapi-auth-service**
+**[ANALYSIS] fastapi-auth-service**
 
 **Pipeline:** `fastapi-auth-service` | **Phase:** `analysis`
 
@@ -13,7 +17,7 @@ You are an autonomous coding agent. Your job is to complete the task below.
 	4. implement circuit breaker
 	5. swagger for all endpoints
 2. Design the application
-	1. Sequence Diagrams and flow diagrams in plantuml
+	1. Sequence Diagrams and flow diagrams in platuml
 	2. design and create the db schema/tables
 3. code implementation with proper testcases
 4. execute testcases
@@ -39,7 +43,7 @@ You are the first agent in an SDLC pipeline. Your job is to **analyze requiremen
    - Existing patterns, utilities, and abstractions to reuse
    - Dependencies and potential conflicts
    - Risks and edge cases
-3. Write your analysis to `artifacts/fastapi-auth-service-analysis/analysis.md` with:
+3. Write your analysis to `C:\Manmadh\genai\claude-code-agents\workspace\fastapi-auth-service-agent-1/artifacts/fastapi-auth-service-analysis/analysis.md` with:
    - **Affected files** — list every file that needs changes
    - **Existing patterns** — reusable code found in the codebase
    - **Dependencies** — external libs, internal modules involved
