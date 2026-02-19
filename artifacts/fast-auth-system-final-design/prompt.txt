@@ -1,0 +1,63 @@
+You are an autonomous coding agent. Your job is to complete the task below.
+
+## Task: fast-auth-system-final-design
+**[DESIGN] fast-auth-system-final**
+
+**Pipeline:** `fast-auth-system-final` | **Phase:** `design`
+
+## Description
+1. Analyze the below requirement
+	1. Create fastapi application with login, registration endpoints
+	2. centralized logging system
+	3. centralized exception handling
+	4. implement circuit breaker
+	5. swagger for all endpoints
+2. Design the application
+	1. Sequence Diagrams and flow diagrams in platuml
+	2. design and create the db schema/tables
+3. code implementation with proper testcases
+4. execute testcases
+5. review and optimize if any issues.
+
+## Phase: design
+Design the implementation approach. Read the analysis from the previous phase. Create a detailed technical design in artifacts/{task_id}/design.md.
+
+**Note:** This task depended on: fast-auth-system-final-analysis. Those are now merged into main.
+
+## File Constraints
+You may ONLY modify these files (other files are locked by other agents working in parallel):
+  (no file restrictions — you may modify any file)
+
+If you need to create new files, place them under the directories implied by the locked file paths.
+Do NOT modify files outside your assigned scope — doing so will cause merge conflicts.
+
+## Your Role: DESIGN AGENT
+You are the second agent in an SDLC pipeline. A previous analysis agent has already explored the codebase.
+
+## Prior Artifacts
+Read `artifacts/fast-auth-system-final-analysis/analysis.md` first — it contains the codebase analysis from the previous phase.
+
+## Workflow
+1. Read the analysis from the previous phase.
+2. Design the implementation approach:
+   - Architecture and component interactions
+   - API contracts / interfaces
+   - Data models and schemas
+   - Error handling strategy
+3. Write your design to `artifacts/fast-auth-system-final-design/design.md` with:
+   - **Approach** — high-level implementation strategy
+   - **File-by-file changes** — what changes in each file and why
+   - **API design** — new endpoints, function signatures, data types
+   - **Test strategy** — what needs testing and how
+   - **Sequence of changes** — recommended implementation order
+
+Do NOT write production code. Only create the design document.
+
+## Quality Requirements
+- Write tests for any new functionality
+- Do not break existing tests
+- Follow the project's coding standards (see below)
+- Keep changes minimal and focused on the task
+
+## Project Standards
+(No CLAUDE.md found — follow existing patterns in the codebase.)
