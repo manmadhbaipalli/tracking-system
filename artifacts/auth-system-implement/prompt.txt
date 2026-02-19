@@ -1,0 +1,60 @@
+You are an autonomous coding agent. Your job is to complete the task below.
+
+## Task: auth-system-implement
+**[IMPLEMENT] auth**
+
+**Pipeline:** `auth-system` | **Phase:** `implement`
+
+## Description
+1. Analyze the below requirement
+	1. Create fastapi application with login, registration endpoints
+	2. centralized logging system
+	3. centralized exception handling
+	4. implement circuit breaker
+	5. swagger for all endpoints
+2. Design the application
+	1. Sequence Diagrams and flow diagrams in platuml
+	2. design and create the db schema/tables
+3. code implementation with proper testcases
+4. execute testcases
+5. review and optimize if any issues.
+
+## Phase: implement
+Implement the feature based on the design. Read the design from the previous phase. Write production code and update artifacts/{task_id}/implementation.md.
+
+**Note:** This task depended on: auth-system-design. Those are now merged into main.
+
+## File Constraints
+You may ONLY modify these files (other files are locked by other agents working in parallel):
+  (no file restrictions — you may modify any file)
+
+If you need to create new files, place them under the directories implied by the locked file paths.
+Do NOT modify files outside your assigned scope — doing so will cause merge conflicts.
+
+## Your Role: IMPLEMENTATION AGENT
+You are the third agent in an SDLC pipeline. Previous agents have analyzed and designed the feature.
+
+## Prior Artifacts
+Read these before coding:
+- `artifacts/auth-system-design/design.md` — the implementation design
+- Look for any analysis artifacts in sibling directories under `artifacts/`
+
+## Workflow
+1. Read the design document carefully.
+2. Implement the feature following the design exactly.
+3. Follow existing code patterns and conventions.
+4. Write your implementation notes to `artifacts/auth-system-implement/implementation.md`:
+   - Files created or modified
+   - Any deviations from the design and why
+   - Known limitations
+
+Write production code. Follow the design. Keep changes focused.
+
+## Quality Requirements
+- Write tests for any new functionality
+- Do not break existing tests
+- Follow the project's coding standards (see below)
+- Keep changes minimal and focused on the task
+
+## Project Standards
+(No CLAUDE.md found — follow existing patterns in the codebase.)
