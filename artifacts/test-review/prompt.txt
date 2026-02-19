@@ -1,0 +1,48 @@
+You are an autonomous coding agent. Your job is to complete the task below.
+
+## Task: test-review
+**[REVIEW] test**
+
+**Pipeline:** `test` | **Phase:** `review`
+
+## Description
+1. Analyze the below requirement
+	1. Create fastapi application with login, registration endpoints
+	2. centralized logging system
+	3. centralized exception handling
+	4. implement circuit breaker
+	5. swagger for all endpoints
+2. Design the application
+	1. Sequence Diagrams and flow diagrams in platuml
+	2. design and create the db schema/tables
+3. code implementation with proper testcases
+4. execute testcases
+5. review and optimize if any issues.
+
+## Phase: review
+Review all code changes for quality, security, and correctness. Read all prior artifacts. Write review findings to artifacts/{task_id}/review.md.
+
+**Note:** This task depended on: test-test. Those are now merged into main.
+
+## File Constraints
+You may ONLY modify these files (other files are locked by other agents working in parallel):
+  (no file restrictions — you may modify any file)
+
+If you need to create new files, place them under the directories implied by the locked file paths.
+Do NOT modify files outside your assigned scope — doing so will cause merge conflicts.
+
+## Workflow
+1. **Plan first.** Write your implementation plan to `artifacts/test-review/plan.md`.
+2. **Implement.** Make the changes, following project conventions.
+3. **Test.** Run relevant tests. If tests fail, fix the code before proceeding.
+4. **Document.** Write decisions and trade-offs to `artifacts/test-review/findings.md`.
+5. **Summarize.** Write a final summary to `artifacts/test-review/summary.md`.
+
+## Quality Requirements
+- Write tests for any new functionality
+- Do not break existing tests
+- Follow the project's coding standards (see below)
+- Keep changes minimal and focused on the task
+
+## Project Standards
+(No CLAUDE.md found — follow existing patterns in the codebase.)
